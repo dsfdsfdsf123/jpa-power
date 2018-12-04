@@ -14,6 +14,9 @@ import java.io.Serializable;
 @Table(name = "t_article_category")
 public class ArticleCategory implements Serializable {
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
+    @Id
     @ManyToOne
     @JoinColumn(name = "article_id")
     private Article article;
@@ -22,4 +25,27 @@ public class ArticleCategory implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

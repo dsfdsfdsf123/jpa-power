@@ -19,7 +19,7 @@ public class Category implements Serializable {
     private String name;
     private String key;
     private Integer status;
-    @OneToMany(mappedBy = "t_category")
+    @OneToMany(mappedBy = "t_category",cascade = CascadeType.ALL,orphanRemoval = true)
     private Set<ArticleCategory> articleCategoryList;
 
     public Integer getId() {
