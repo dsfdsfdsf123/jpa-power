@@ -19,11 +19,11 @@ public class ArticleCategory implements Serializable {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "article_id")
+    @JoinColumn(name = "articleId")
     private Article article;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "categoryId")
     private Category category;
 
     public Integer getId() {
