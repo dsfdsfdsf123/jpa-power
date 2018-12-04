@@ -11,7 +11,7 @@ import java.util.Set;
  * @create 2018/12/4 14:25
  **/
 @Entity
-@Table(name = "t_category")
+@Table(name = "category")
 public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Category implements Serializable {
     private String name;
     private String key;
     private Integer status;
-    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "category")
     private Set<ArticleCategory> articleCategoryList;
 
     public Integer getId() {

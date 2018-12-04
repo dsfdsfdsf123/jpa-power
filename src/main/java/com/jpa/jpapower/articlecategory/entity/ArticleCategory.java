@@ -11,11 +11,9 @@ import java.io.Serializable;
  * @create 2018/12/4 14:28
  **/
 @Entity
-@Table(name = "t_article_category")
+@Table(name = "article_category")
 public class ArticleCategory implements Serializable {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer id;
+
     @Id
     @ManyToOne
     @JoinColumn(name = "article_id")
@@ -24,14 +22,6 @@ public class ArticleCategory implements Serializable {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Article getArticle() {
         return article;

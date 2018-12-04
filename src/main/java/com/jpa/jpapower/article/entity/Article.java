@@ -12,7 +12,7 @@ import java.util.Set;
  * @create 2018/12/4 14:19
  **/
 @Entity
-@Table(name = "t_article")
+@Table(name = "article")
 public class Article implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
