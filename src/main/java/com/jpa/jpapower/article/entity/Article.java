@@ -28,7 +28,7 @@ public class Article implements Serializable {
     private Date createTime;
     private Date updateTime;
     private Integer status;
-    @OneToMany(mappedBy = "article",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "t_article",cascade = CascadeType.ALL,orphanRemoval = true)
     private Set<ArticleCategory> articleCategoryList;
 
     public Integer getId() {
