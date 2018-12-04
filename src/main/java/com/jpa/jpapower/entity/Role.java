@@ -1,20 +1,19 @@
-package com.jpa.jpapower.role.entity;
+package com.jpa.jpapower.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author liugang
- * @create 2018/12/3 17:46
+ * @create 2018/12/4 23:36
  **/
 @Entity
 @Table(name = "t_role")
-public class Role {
-
+public class Role implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(length = 20)
+    @Column(name = "name",length = 30)
     private String name;
 
     public Integer getId() {

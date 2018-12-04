@@ -1,25 +1,26 @@
-package com.jpa.jpapower.user.entity;
-
+package com.jpa.jpapower.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author liugang
- * @create 2018/12/3 17:41
+ * @create 2018/12/4 23:35
  **/
 @Entity
 @Table(name = "t_user")
-public class User {
-
+public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(length = 20)
+    @Column(name = "username",length = 30)
     private String username;
-
-    @Column(length = 20)
+    @Column(name = "password",length = 50)
     private String password;
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private List<Role> roles;
 
     public Integer getId() {
         return id;
@@ -43,5 +44,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }
