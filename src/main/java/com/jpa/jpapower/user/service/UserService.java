@@ -8,8 +8,6 @@ import com.jpa.jpapower.user.entity.User;
  **/
 public interface UserService {
 
-    void addUser(User user);
-
     User findByName(String name);
 
 

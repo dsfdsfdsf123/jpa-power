@@ -1,5 +1,6 @@
 package com.jpa.jpapower.user.entity;
 
+
 import javax.persistence.*;
 
 /**
@@ -11,7 +12,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
     @Column(length = 20)
