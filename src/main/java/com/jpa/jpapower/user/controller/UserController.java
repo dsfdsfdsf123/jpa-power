@@ -15,6 +15,11 @@ public class UserController {
     public String login(Model model){
         String name = "1234";
         model.addAttribute("name",name);
-        return "login";
+        return "/login";
+    }
+
+    @RequestMapping("/admin")
+    public String admin(){
+        return "admin";
     }
 }
