@@ -10,7 +10,5 @@ import java.util.List;
  **/
 public interface PermissionService {
 
-    List<Permission> findAll();
-
-    List<Permission> findByAdminUserId(int userId,Integer page,Integer pageSize);
+    List<Permission> findByUserName(String username);
 }

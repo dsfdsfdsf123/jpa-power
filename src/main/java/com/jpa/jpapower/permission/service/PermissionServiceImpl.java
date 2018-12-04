@@ -25,15 +25,9 @@ public class PermissionServiceImpl implements PermissionService {
     @Resource
     private PermissionDao permissionDao;
 
-    @Override
-    public List<Permission> findAll() {
-        return permissionDao.findAll();
-    }
 
     @Override
-    public List<Permission> findByAdminUserId(int userId, Integer page, Integer pageSize) {
-        return null;
+    public List<Permission> findByUserName(String username) {
+        return permissionDao.findByUsername(username);
     }
-
-
 }

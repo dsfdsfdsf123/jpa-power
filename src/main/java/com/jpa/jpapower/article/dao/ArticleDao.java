@@ -15,5 +15,5 @@ public interface ArticleDao extends JpaRepository<Article,Integer> {
      * @param pageable
      * @return
      */
-    Page<Article> findAllByOrOrderByStatusDescIdDesc(Pageable pageable);
+    Page<Article> findAllByOrderByStatusDescIdDesc(Pageable pageable);
 }

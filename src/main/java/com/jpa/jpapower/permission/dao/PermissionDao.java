@@ -15,4 +15,5 @@ public interface PermissionDao extends JpaRepository<Permission,Integer>, JpaSpe
     @Override
     public List<Permission> findAll();
 
+    List<Permission> findByUsername(String username);
 }
