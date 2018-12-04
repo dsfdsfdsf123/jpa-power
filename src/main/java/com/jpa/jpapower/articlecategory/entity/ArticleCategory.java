@@ -15,13 +15,24 @@ import java.io.Serializable;
 public class ArticleCategory implements Serializable {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
+
     @ManyToOne
     @JoinColumn(name = "article_id")
     private Article article;
-    @Id
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Article getArticle() {
         return article;
