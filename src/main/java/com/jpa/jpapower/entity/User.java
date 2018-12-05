@@ -18,9 +18,7 @@ public class User implements Serializable {
     private String username;
     @Column(name = "password",length = 50)
     private String password;
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private List<Role> roles;
+
 
     public Integer getId() {
         return id;
@@ -46,11 +44,4 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
 }
